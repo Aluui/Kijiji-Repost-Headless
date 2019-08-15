@@ -1,0 +1,28 @@
+PostalLat: '49.743282'
+PostalLng: '-96.529782'
+categoryId: '35'
+image_paths: [./images/$_59.JPG, ./images/$_59(1).JPG, ./images/$_59(2).JPG, ./images/$_59(3).JPG, ./images/$_59(4).JPG, ./images/$_59(5).JPG, ./images/$_59(6).JPG,
+  ./images/$_59(7).JPG, ./images/$_59(8).JPG]
+locationLevel0: 9006
+password: vsuk264b
+postAdForm.adType: OFFER
+postAdForm.addressCity: Richer
+postAdForm.addressPostalCode: R0E 1S0
+postAdForm.addressProvince: MB
+postAdForm.attributeMap[areainfeet_i]: 1,960
+postAdForm.attributeMap[forsalebyhousing_s]: realestagent
+postAdForm.attributeMap[numberbathrooms_s]: '30'
+postAdForm.attributeMap[numberbedrooms_s]: '4'
+postAdForm.city: Richer
+postAdForm.description: "This 1960 square foot 4 bedroom 3 bathroom property situated in the Town of Ste Genevieve is perfect for a growing family. The property sits on a 2.16 acre well treed lot direct school bus route to the town of Ste Anne and has lots of privacy. The house has forced air with AC a large living room and dinning area on the main floor. The basement has a large bedroom and a full bathroom with two large rec areas that need finishing to the taste of the new owner. The house has Central vac and waste water runs to a septic field, A double attached garage big enough for all the toys you need for country living. Quick possession possible.\n\nVisit https://easyrealestatewpg.com/buyer-apply-now to fill out an application today"
+postAdForm.geocodeLat: '49.743282'
+postAdForm.geocodeLng: '-96.529782'
+postAdForm.locationId: 1700192
+postAdForm.postalCode: R0E 1S0
+postAdForm.priceAmount: '337000'
+postAdForm.priceType: FIXED
+postAdForm.province: MB
+postAdForm.title: Rent To Own - 4 bd 3 bath - North of Ste Anne
+submitType: saveAndCheckout
+topAdDuration: '7'
+username: alumbs

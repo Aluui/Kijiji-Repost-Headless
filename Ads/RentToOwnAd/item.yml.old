@@ -1,0 +1,28 @@
+PostalLat: "49.872059"
+PostalLng: "-97.178264"
+categoryId: "35"
+image_paths: []
+locationLevel0: 9006
+password: vsuk264b
+postAdForm.adType: OFFER
+postAdForm.addressCity: Winnipeg
+postAdForm.addressPostalCode: "R3M 3M7"
+postAdForm.addressProvince: MB
+postAdForm.attributeMap[areainfeet_i]: "900"
+postAdForm.attributeMap[forsalebyhousing_s]: ownr
+postAdForm.attributeMap[numberbathrooms_s]: "20"
+postAdForm.attributeMap[numberbedrooms_s]: "3"
+postAdForm.city: Winnipeg
+postAdForm.description:
+  "Poor credit, can\u2019t get a mortgage? But you have a small down payment and can afford\
+  \ house payments?\\nWe can help you with a Rent to Own. Visit http://easyrealestatewpg.ca/ for more information. \n\nWe only work in Winnipeg. We will reach out to you if we have any available units."
+postAdForm.geocodeLat: "49.872059"
+postAdForm.geocodeLng: "-97.178264"
+postAdForm.locationId: 1700192
+postAdForm.postalCode: "R3M 3M7"
+postAdForm.priceType: CONTACT
+postAdForm.province: MB
+postAdForm.title: Buy your dream home using Rent To Own
+submitType: saveAndCheckout
+topAdDuration: "7"
+username: alumbs

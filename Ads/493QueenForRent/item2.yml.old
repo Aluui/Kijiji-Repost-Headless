@@ -1,0 +1,39 @@
+PostalLat: '49.8900806'
+PostalLng: '-97.2064351'
+categoryId: '43'
+image_paths: [./images/img1.jpg, ./images/img2.jpg, ./images/img3.jpg, ./images/img4.jpg, ./images/img5.jpg, ./images/img6.jpg, ./images/img7.jpg, ./images/img8.jpg, ./images/img9.jpg, ./images/img10.jpg]
+locationLevel0: 9006
+password: vsuk264b
+postAdForm.adType: OFFER
+postAdForm.addressCity: Winnipeg
+postAdForm.addressPostalCode: R3J 1L3
+postAdForm.addressProvince: MB
+postAdForm.attributeMap[areainfeet_i]: '685'
+postAdForm.attributeMap[forrentbyhousing_s]: ownr
+postAdForm.attributeMap[furnished_s]: '0'
+postAdForm.attributeMap[numberbathrooms_s]: '20'
+postAdForm.attributeMap[numberbedrooms_s]: '9'
+postAdForm.attributeMap[petsallowed_s]: '1'
+postAdForm.city: Winnipeg
+postAdForm.description: "Welcome to your next home.\\n\\nQuick Home Summary\\n- Cost:\
+  \ $1,285 (utilities extra) Or $1,490 utilities included.\\n- # Beds: 2\\n- # Baths:\
+  \ 2 Full (one in basement)\\n- Washer and Dryer: \u2714\uFE0F (in basement)\\n-\
+  \ Stove, Fridge: \u2714\uFE0F (main floor kitchen)\\n- Den / Extra room: \u2714\uFE0F\
+  \ In basement\\n- Pets allowed: \u2714\uFE0F(Cats and small animals only)\\n- Dishwasher:\
+  \ No \u2716\uFE0F\\n- Other features: Personal parking pad (back of the house),\
+  \ two sheds for storage, minutes from everywhere around St James.\\n\\nMinimum Qualification\
+  \ Criteria:\\n- Household Income must be 3x the rent i.e. $3,900 or more\\n- Good\
+  \ references from ALL previous landlords\\n- No Evictions: Ever\\n- Clean Background:\
+  \ No felonies or other negative criminal activities on their record\\n\\nIs this\
+  \ you? \u2714\uFE0F contact us. This may just be your new home"
+postAdForm.geocodeLat: '49.8900806'
+postAdForm.geocodeLng: '-97.2064351'
+postAdForm.locationId: 1700192
+postAdForm.postalCode: R3J 1L3
+postAdForm.priceAmount: '1285'
+postAdForm.priceType: FIXED
+postAdForm.province: MB
+postAdForm.title: St James Rental - 2bd + den / 2 baths - Available Feb 1st
+submitType: saveAndCheckout
+topAdDuration: '7'
+username: alumbs
