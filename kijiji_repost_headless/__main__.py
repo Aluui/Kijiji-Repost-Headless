@@ -29,7 +29,7 @@ def main():
     show_parser.add_argument('-r', '--reverse', action='store_true', dest='sort_reverse', help='reverse sort order')
 
     delete_parser = subparsers.add_parser('delete', help='delete a listed ad')
-    delete_parser.add_argument('id', type=str, help='id of the ad you wish to delete')
+    delete_parser.add_argument('ad_file', type=str, help='.yml file containing ad details')
     delete_parser.set_defaults(function=delete_ad)
 
     nuke_parser = subparsers.add_parser('nuke', help='delete all ads')
@@ -82,9 +82,12 @@ def post_ad(args, api=None):
     """
     [data, image_files] = get_post_details(args.ad_file)
     get_username_if_needed(args, data)
+    if not api:
+        api = kijiji_api.KijijiApi()
+        api.login(args.username, args.password)
 
     attempts = 1
-    while not check_ad(args) and attempts < 5:
+    while not check_ad(args, api) and attempts < 5:
         if attempts > 1:
             print("Failed ad post attempt #{}, trying again.".format(attempts))
         attempts += 1
@@ -93,7 +96,7 @@ def post_ad(args, api=None):
             api = kijiji_api.KijijiApi()
             api.login(args.username, args.password)
         api.post_ad_using_data(data, image_files)
-    if not check_ad(args):
+    if not check_ad(args, api):
         print("Failed ad post attempt #{}, giving up.".format(attempts))
 
 
@@ -119,18 +122,6 @@ def delete_ad(args, api=None):
     """
     Delete ad
     """
-    if not api:
-        api = kijiji_api.KijijiApi()
-        api.login(args.username, args.password)
-    api.delete_ad(args.id)
-
-
-def repost_ad(args, api=None):
-    """
-    Repost ad
-
-    Try to delete ad with same title if possible before reposting new ad
-    """
     [data, _] = get_post_details(args.ad_file)
     get_username_if_needed(args, data)
 
@@ -138,16 +129,24 @@ def repost_ad(args, api=None):
         api = kijiji_api.KijijiApi()
         api.login(args.username, args.password)
 
-    del_ad_name = ""
-    for item in data:
-        if item == "postAdForm.title":
-            del_ad_name = data[item]
-    try:
-        api.delete_ad_using_title(del_ad_name)
-        print("Existing ad deleted before reposting")
-    except kijiji_api.KijijiApiException:
-        print("Did not find an existing ad with matching title, skipping ad deletion")
-        pass
+    if args.ad_file:
+        del_ad_name = ""
+        for item in data:
+            if item == "postAdForm.title":
+                del_ad_name = data[item]
+        try:
+            api.delete_ad_using_title(del_ad_name)
+            print("Deletion successful")
+        except kijiji_api.KijijiApiException:
+            print("Did not find an existing ad with matching title, skipping ad deletion")
+
+def repost_ad(args, api=None):
+    """
+    Repost ad
+
+    Try to delete ad with same title if possible before reposting new ad
+    """
+    delete_ad(args, api)
 
     # Must wait a bit before posting the same ad even after deleting it, otherwise Kijiji will automatically remove it
     print("Waiting 3 minutes before posting again. Please do not exit this script.")
@@ -161,7 +160,7 @@ def repost_ad(args, api=None):
     print("Still waiting; just 10 seconds...")
     sleep(10)
     print("Posting Ad now")
-    post_ad(args)
+    post_ad(args, api)
 
 
 def check_ad(args, api=None):
