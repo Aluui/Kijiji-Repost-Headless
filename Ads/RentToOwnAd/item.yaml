@@ -1,0 +1,36 @@
+postAdForm.attributeMap[numberbedrooms_s]: "9"
+postAdForm.attributeMap[numberbathrooms_s]: "10"
+postAdForm.addressProvince: Manitoba
+postAdForm.attributeMap[areainfeet_i]: "1000"
+postAdForm.title: Buy your dream home using Rent To Own
+postAdForm.addressStreetNumber: 427 Winterton Avenue
+postAdForm.addressStreetName: Winterton
+postAdForm.addressCity: Winnipeg
+postAdForm.addressPostalCode: R2K 1G3
+postAdForm.priceAmount: 220,000
+postAdForm.phoneNumber: 204-818-1236
+postAdForm.adType: OFFER
+postAdForm.attributeMap[forsalebyhousing_s]: ownr
+postAdForm.priceType: CONTACT
+postAdForm.city: Winnipeg
+postAdForm.province: Manitoba
+postAdForm.postalCode: R2K 1G3
+postAdForm.geocodeLat: "49.9183703"
+postAdForm.geocodeLng: "-97.1023446"
+postAdForm.locationId: 1700192
+PostalLat: "49.9183703"
+PostalLng: "-97.1023446"
+locationLevel0: 9006
+topAdDuration: "7"
+submitType: saveAndCheckout
+postAdForm.description:
+  With interest rates being record low, NOW is the best time
+  to get into home ownership.\nPoor credit, can't get a mortgage? But you have a small
+  down payment and can afford house payments? We can help you with a Rent to Own.\nVisit
+  http://easyrealestatewpg.ca for more information and get started on your journey
+  to home ownership.\nWe only work in Winnipeg
+categoryId: 35
+image_paths:
+  - ./images/rto.jpg
+username: alumbs
+password: vsuk264b
