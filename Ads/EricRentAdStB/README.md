@@ -1,0 +1,1 @@
+python kijiji_repost_headless -u ericos55@hotmail.com -p zagores1977 repost Ads/EricRentAdStB/item.yaml

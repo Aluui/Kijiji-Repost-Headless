@@ -1,0 +1,63 @@
+postAdForm.attributeMap[numberbedrooms_s]: '2'
+postAdForm.attributeMap[numberbathrooms_s]: '10'
+postAdForm.attributeMap[numberparkingspots_s]: '1'
+postAdForm.addressProvince: Manitoba
+postAdForm.attributeMap[dateavailable_tdt]: '01/09/2020'
+postAdForm.attributeMap[areainfeet_i]: '1074'
+postAdForm.title: 2 bedrooms and 1 bathroom Main Suite duplex
+postAdForm.addressStreetNumber: '378'
+postAdForm.addressStreetName: Desautels
+postAdForm.addressCity: Winnipeg
+postAdForm.addressPostalCode: R2H 2P6
+postAdForm.priceAmount: '1395'
+postAdForm.phoneNumber: ''
+postAdForm.adType: OFFER
+postAdForm.attributeMap[forrentbyhousing_s]: ownr
+postAdForm.attributeMap[unittype_s]: duplex-triplex
+postAdForm.attributeMap[petsallowed_s]: '1'
+postAdForm.attributeMap[agreementtype_s]: one-year
+postAdForm.attributeMap[furnished_s]: '0'
+postAdForm.attributeMap[laundryinunit_s]: '1'
+postAdForm.attributeMap[dishwasher_s]: '1'
+postAdForm.attributeMap[fridgefreezer_s]: '1'
+postAdForm.attributeMap[hydro_s]: '1'
+postAdForm.attributeMap[heat_s]: '1'
+postAdForm.attributeMap[water_s]: '1'
+postAdForm.attributeMap[yard_s]: '1'
+postAdForm.attributeMap[balcony_s]: '1'
+postAdForm.attributeMap[barrierfreeentrancesandramps_s]: '1'
+postAdForm.attributeMap[visualaids_s]: '1'
+postAdForm.attributeMap[accessiblewashroomsinsuite_s]: '1'
+postAdForm.attributeMap[airconditioning_s]: '0'
+postAdForm.attributeMap[smokingpermitted_s]: '0'
+postAdForm.priceType: FIXED
+postAdForm.city: Winnipeg
+postAdForm.province: Manitoba
+postAdForm.postalCode: R2H 2P6
+postAdForm.geocodeLat: '49.8910979'
+postAdForm.geocodeLng: '-97.1115729'
+postAdForm.locationId: 1700192
+PostalLat: '49.8910979'
+PostalLng: '-97.1115729'
+locationLevel0: 9006
+topAdDuration: '7'
+submitType: saveAndCheckout
+postAdForm.description: Located in the highly desirable location of St Boniface. The
+  main floor suite features a large eat-in kitchen, spacious living room, 2 main floor
+  bedrooms .The main floor has a beautifully upgraded bathroom, brand new laminate
+  flooring throughout, custom paint and in-suite laundry. Close to the forks, university
+  of saint Boniface and Whittier park!! ** all utilities included **1395$ a month
+  available ASAP Read Less
+categoryId: 37
+image_paths:
+- ./images/1.jpg
+- ./images/1p5.jpg
+- ./images/2.jpg
+- ./images/3.jpg
+- ./images/4.jpg
+- ./images/5.jpg
+- ./images/6.jpg
+- ./images/7.jpg
+- ./images/8.jpg
+- ./images/9.jpg
+# - ./images/10.jpg
