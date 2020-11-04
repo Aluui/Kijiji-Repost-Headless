@@ -25,11 +25,13 @@ class KijijiApiException(Exception):
     """
     Custom KijijiApi exception class
     """
+
     def __init__(self, msg="KijijiApi exception encountered.", dump=None):
         self.msg = msg
         self.dumpfilepath = ""
         if dump:
-            self.dumpfilepath = "kijijiapi_dump_{}.html".format(strftime("%Y%m%dT%H%M%S"))
+            self.dumpfilepath = "kijijiapi_dump_{}.html".format(
+                strftime("%Y%m%dT%H%M%S"))
             with open(self.dumpfilepath, 'a', encoding='utf-8') as f:
                 f.write(dump)
 
@@ -47,7 +49,8 @@ def get_token(html, attrib_name):
     soup = bs4.BeautifulSoup(html, 'html.parser')
     res = soup.select("[name='{}']".format(attrib_name))
     if not res:
-        raise KijijiApiException("Element with name attribute '{}' not found in html text.".format(attrib_name), html)
+        raise KijijiApiException(
+            "Element with name attribute '{}' not found in html text.".format(attrib_name), html)
     return res[0]['value']
 
 
@@ -64,7 +67,8 @@ def get_kj_data(html):
             m = p.search(script.string)
             if m:
                 return json.loads(m.group(1))
-    raise KijijiApiException("'__data' JSON object not found in html text.", html)
+    raise KijijiApiException(
+        "'__data' JSON object not found in html text.", html)
 
 
 def get_xsrf_token(html):
@@ -88,6 +92,7 @@ class KijijiApi:
     """
     All functions require to be logged in to Kijiji first in order to function correctly
     """
+
     def __init__(self):
         config = {}
         self.session = requests.Session()
@@ -95,6 +100,7 @@ class KijijiApi:
     def login(self, username, password):
         """
         Login to Kijiji for the current session
+        """
         """
         login_url = 'https://www.kijiji.ca/'
         resp = self.session.get(login_url, headers=request_headers)
@@ -115,6 +121,9 @@ class KijijiApi:
         }
         api_url = 'https://www.kijiji.ca/anvil/api'  # API endpoint
         resp = self.session.post(api_url, json=payload)
+        """
+        cookie_dict = {'ssid': 'NzgyNDg2Njd8ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6VXhNaUo5LmV5SmxlSEFpT2pFMk1EZ3dOREEzT0Rnc0ltbGhkQ0k2TVRZd01qZzFOamM0T0N3aWMzVmlJam9pTnpneU5EZzJOamNpTENKbGJXRnBiQ0k2SW1OdmIyeGphR2xpYzBCbmJXRnBiQzVqYjIwaWZRLjNFZVdyV1h4ZUdjdFZJTDkxN0RReWhGVlFHbjlSQTVvcTF3azN4RXVfMVFiM1U0VDQxTlBNN2xhV19wLVEzNk9CZkhrSTJUZmJYLXdSa1VPNFRoUWFB'}
+        requests.utils.add_dict_to_cookiejar(self.session.cookies, cookie_dict)
 
         if not self.is_logged_in():
             raise KijijiApiException("Could not log in.", resp.text)
@@ -123,7 +132,8 @@ class KijijiApi:
         """
         Return true if logged into Kijiji for the current session
         """
-        resp = self.session.get('https://www.kijiji.ca/my/ads.json', headers=request_headers)
+        resp = self.session.get(
+            'https://www.kijiji.ca/my/ads.json', headers=request_headers)
         try:
             resp.json()
             return True
@@ -134,13 +144,15 @@ class KijijiApi:
         """
         Logout of Kijiji for the current session
         """
-        self.session.get('https://www.kijiji.ca/m-logout.html',  headers=request_headers)
+        self.session.get('https://www.kijiji.ca/m-logout.html',
+                         headers=request_headers)
 
     def delete_ad(self, ad_id):
         """
         Delete ad based on ad ID
         """
-        my_ads_page = self.session.get('https://www.kijiji.ca/m-my-ads.html',  headers=request_headers)
+        my_ads_page = self.session.get(
+            'https://www.kijiji.ca/m-my-ads.html',  headers=request_headers)
         params = {
             'Action': 'DELETE_ADS',
             'Mode': 'ACTIVE',
@@ -148,7 +160,8 @@ class KijijiApi:
             'ads': '[{{"adId":"{}","reason":"PREFER_NOT_TO_SAY","otherReason":""}}]'.format(ad_id),
             'ca.kijiji.xsrf.token': get_xsrf_token(my_ads_page.text),
         }
-        resp = self.session.post('https://www.kijiji.ca/j-delete-ad.json', data=params,  headers=request_headers)
+        resp = self.session.post(
+            'https://www.kijiji.ca/j-delete-ad.json', data=params,  headers=request_headers)
         if "OK" not in resp.text:
             raise KijijiApiException("Could not delete ad.", resp.text)
 
@@ -157,7 +170,8 @@ class KijijiApi:
         Delete ad based on ad title
         """
         all_ads = self.get_all_ads()
-        [self.delete_ad(ad['id']) for ad in all_ads if ad['title'].strip() == title.strip() and ad['categoryId'] == categoryId]
+        [self.delete_ad(ad['id']) for ad in all_ads if ad['title'].strip(
+        ) == title.strip() and ad['categoryId'] == categoryId]
 
     def upload_image(self, token, image_files=[]):
         """
@@ -194,42 +208,51 @@ class KijijiApi:
         'image_files' is a list of binary objects corresponding to images to upload
         """
         # Load ad posting page (arbitrary category)
-        resp = self.session.get('https://www.kijiji.ca/p-admarkt-post-ad.html?categoryId=15', headers=request_headers)
+        resp = self.session.get(
+            'https://www.kijiji.ca/p-admarkt-post-ad.html?categoryId=15', headers=request_headers)
 
         # Get token required for upload
         m = re.search(r"initialXsrfToken: '(\S+)'", resp.text)
         if m:
             image_upload_token = m.group(1)
         else:
-            raise KijijiApiException("'initialXsrfToken' not found in html text.", resp.text)
+            raise KijijiApiException(
+                "'initialXsrfToken' not found in html text.", resp.text)
 
         # Upload the images
         image_list = self.upload_image(image_upload_token, image_files)
         data['images'] = ",".join(image_list)
 
         # Retrieve XSRF tokens
-        data['ca.kijiji.xsrf.token'] = get_token(resp.text, 'ca.kijiji.xsrf.token')
-        data['postAdForm.fraudToken'] = get_token(resp.text, 'postAdForm.fraudToken')
+        data['ca.kijiji.xsrf.token'] = get_token(
+            resp.text, 'ca.kijiji.xsrf.token')
+        data['postAdForm.fraudToken'] = get_token(
+            resp.text, 'postAdForm.fraudToken')
 
         # Select basic package and confirm terms
         data['postAdForm.confirmedTerms'] = True
         data['featuresForm.featurePackage'] = "PKG_BASIC"
 
         # Format ad data and check constraints
-        data['postAdForm.description'] = data['postAdForm.description'].replace("\\n", "\n")
+        data['postAdForm.description'] = data['postAdForm.description'].replace(
+            "\\n", "\n")
         title_len = len(data.get("postAdForm.title", ""))
         if not title_len >= 8:
-            raise KijijiApiException("Your ad title is too short! (min 8 chars)")
+            raise KijijiApiException(
+                "Your ad title is too short! (min 8 chars)")
         if title_len > 64:
-            raise KijijiApiException("Your ad title is too long! (max 64 chars)")
+            raise KijijiApiException(
+                "Your ad title is too long! (max 64 chars)")
 
         # Upload the ad itself
         new_ad_url = "https://www.kijiji.ca/p-submit-ad.html"
-        resp = self.session.post(new_ad_url, data=data, headers=request_headers)
+        resp = self.session.post(
+            new_ad_url, data=data, headers=request_headers)
         resp.raise_for_status()
         if "deleteWithoutSurvey" not in resp.text:
             if "There was an issue posting your ad, please contact Customer Service." in resp.text:
-                raise KijijiApiException("Could not post ad; this user is banned.", resp.text)
+                raise KijijiApiException(
+                    "Could not post ad; this user is banned.", resp.text)
             else:
                 raise KijijiApiException("Could not post ad.", resp.text)
 
@@ -242,7 +265,8 @@ class KijijiApi:
         """
         Return a list of dicts with properties for every active ad
         """
-        resp = self.session.get('https://www.kijiji.ca/my/ads.json', headers=request_headers)
+        resp = self.session.get(
+            'https://www.kijiji.ca/my/ads.json', headers=request_headers)
         resp.raise_for_status()
         ads_json = json.loads(resp.text)
         ads_info = ads_json['ads']
@@ -252,7 +276,8 @@ class KijijiApi:
             # Can't use dict comprehension for building params because every key has the same name,
             # must use a list of key-value tuples instead
             params = [("ids", ad['id']) for ad in ads_info.values()]
-            resp = self.session.get('https://www.kijiji.ca/my/ranks', params=params, headers=request_headers)
+            resp = self.session.get(
+                'https://www.kijiji.ca/my/ranks', params=params, headers=request_headers)
             resp.raise_for_status()
             ranks_json = json.loads(resp.text)
 

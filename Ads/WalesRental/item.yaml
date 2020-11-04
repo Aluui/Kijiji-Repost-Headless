@@ -1,0 +1,62 @@
+postAdForm.attributeMap[numberbedrooms_s]: "2.5"
+postAdForm.attributeMap[numberbathrooms_s]: "10"
+postAdForm.attributeMap[numberparkingspots_s]: "2"
+postAdForm.addressProvince: Manitoba
+postAdForm.attributeMap[dateavailable_tdt]: "01/12/2020"
+postAdForm.attributeMap[areainfeet_i]: "895"
+postAdForm.title: South End 2 beds + 2 Den, and 2 bathroom
+postAdForm.addressStreetNumber: "474"
+postAdForm.addressStreetName: Wales
+postAdForm.addressCity: Winnipeg
+postAdForm.addressPostalCode: R2M 2T2
+postAdForm.priceAmount: "1375"
+postAdForm.phoneNumber: ""
+postAdForm.adType: OFFER
+postAdForm.attributeMap[forrentbyhousing_s]: ownr
+postAdForm.attributeMap[unittype_s]: house
+postAdForm.attributeMap[petsallowed_s]: "1"
+postAdForm.attributeMap[agreementtype_s]: one-year
+postAdForm.attributeMap[furnished_s]: "0"
+postAdForm.attributeMap[laundryinunit_s]: "1"
+postAdForm.attributeMap[dishwasher_s]: "0"
+postAdForm.attributeMap[fridgefreezer_s]: "1"
+postAdForm.attributeMap[hydro_s]: "0"
+postAdForm.attributeMap[heat_s]: "0"
+postAdForm.attributeMap[water_s]: "0"
+postAdForm.attributeMap[yard_s]: "1"
+postAdForm.attributeMap[balcony_s]: "0"
+postAdForm.attributeMap[barrierfreeentrancesandramps_s]: "1"
+postAdForm.attributeMap[visualaids_s]: "1"
+postAdForm.attributeMap[accessiblewashroomsinsuite_s]: "0"
+postAdForm.attributeMap[airconditioning_s]: "1"
+postAdForm.attributeMap[smokingpermitted_s]: "0"
+postAdForm.priceType: FIXED
+postAdForm.city: Winnipeg
+postAdForm.province: Manitoba
+postAdForm.postalCode: R2M 2T2
+postAdForm.geocodeLat: "49.8300143"
+postAdForm.geocodeLng: "-97.0961327"
+postAdForm.locationId: 1700192
+PostalLat: "49.8300143"
+PostalLng: "-97.0961327"
+locationLevel0: 9006
+topAdDuration: "7"
+submitType: saveAndCheckout
+postAdForm.description:
+  Located in the highly desirable location of St Vital. The
+  main floor suite features a large living room, spacious dining room, 2 main floor
+  bedrooms. The main floor has a full bathroom, brand new laminate
+  flooring throughout, custom paint and laundry in the basement. Close to the bus route, one bus to the university
+  of Winnipeg!!
+categoryId: 37
+image_paths:
+  - ./images/1.jpg
+  - ./images/2.jpg
+  - ./images/3.jpg
+  - ./images/4.jpg
+  - ./images/5.jpg
+  - ./images/6.5.jpg
+  - ./images/6.jpg
+  - ./images/7.5.jpg
+  - ./images/7.jpg
+  - ./images/8.jpg
