@@ -6,6 +6,7 @@ from random import choice
 import bs4
 import requests
 import yaml
+import os
 
 user_agents = [
     # Random list of top UAs for mac and windows/ chrome & FF
@@ -97,36 +98,20 @@ class KijijiApi:
         config = {}
         self.session = requests.Session()
 
-    def login(self, username, password):
+    def login(self, ssid):
         """
         Login to Kijiji for the current session
         """
-        """
-        login_url = 'https://www.kijiji.ca/'
-        resp = self.session.get(login_url, headers=request_headers)
-        payload = {
-            "operationName": "loginUser",
-            "variables": {
-                "input": {
-                    "emailOrNickname": username,
-                    "password": password,
-                    "rememberMe": True,
-                    "targetUrl": None,
-                    "fraudToken": None,  # Valid value doesn't appear to be necessary for login
-                    "campaign": None,
-                    "xsrfToken": get_xsrf_token(resp.text)
-                }
-            },
-            "query": "mutation loginUser($input: LoginUserInput!) {\n  loginUser(input: $input) {\n    userId\n    message\n    statusCode\n    redirectUrl\n    __typename\n  }\n}\n",
-        }
-        api_url = 'https://www.kijiji.ca/anvil/api'  # API endpoint
-        resp = self.session.post(api_url, json=payload)
-        """
-        cookie_dict = {'ssid': 'NzgyNDg2Njd8ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6VXhNaUo5LmV5SmxlSEFpT2pFMk1EZ3dOREEzT0Rnc0ltbGhkQ0k2TVRZd01qZzFOamM0T0N3aWMzVmlJam9pTnpneU5EZzJOamNpTENKbGJXRnBiQ0k2SW1OdmIyeGphR2xpYzBCbmJXRnBiQzVqYjIwaWZRLjNFZVdyV1h4ZUdjdFZJTDkxN0RReWhGVlFHbjlSQTVvcTF3azN4RXVfMVFiM1U0VDQxTlBNN2xhV19wLVEzNk9CZkhrSTJUZmJYLXdSa1VPNFRoUWFB'}
-        requests.utils.add_dict_to_cookiejar(self.session.cookies, cookie_dict)
+        parent_dir = os.path.dirname(
+            os.path.dirname(os.path.abspath(__file__)))
+        ssid_path = os.path.join(parent_dir, ssid)
+        with open(ssid_path) as ssidFile:
+            cookie_dict = {'ssid': ssidFile.read().strip()}
+            requests.utils.add_dict_to_cookiejar(
+                self.session.cookies, cookie_dict)
 
         if not self.is_logged_in():
-            raise KijijiApiException("Could not log in.", resp.text)
+            raise KijijiApiException("Could not log in.")
 
     def is_logged_in(self):
         """
@@ -165,13 +150,13 @@ class KijijiApi:
         if "OK" not in resp.text:
             raise KijijiApiException("Could not delete ad.", resp.text)
 
-    def delete_ad_using_title(self, title, categoryId):
+    def delete_ad_using_title(self, title):
         """
         Delete ad based on ad title
         """
         all_ads = self.get_all_ads()
-        [self.delete_ad(ad['id']) for ad in all_ads if ad['title'].strip(
-        ) == title.strip() and ad['categoryId'] == categoryId]
+        [self.delete_ad(ad['id'])
+         for ad in all_ads if ad['title'].strip() == title.strip()]
 
     def upload_image(self, token, image_files=[]):
         """
@@ -181,7 +166,7 @@ class KijijiApi:
         """
         image_urls = []
         image_upload_url = 'https://www.kijiji.ca/p-upload-image.html'
-        for idx, img_file in enumerate(image_files):
+        for img_file in image_files:
             for i in range(0, 3):
                 r = self.session.post(
                     image_upload_url,
@@ -193,11 +178,11 @@ class KijijiApi:
                 try:
                     image_tree = json.loads(r.text)
                     img_url = image_tree['thumbnailUrl']
-                    print("Image #{} upload success on try #{}".format(idx + 1, i+1))
+                    print("Image upload success on try #{}".format(i+1))
                     image_urls.append(img_url)
                     break
                 except (KeyError, ValueError):
-                    print("Image #{} upload failed on try #{}".format(idx + 1, i+1))
+                    print("Image upload failed on try #{}".format(i+1))
         return [image for image in image_urls if image is not None]
 
     def post_ad_using_data(self, data, image_files=[]):
@@ -249,7 +234,7 @@ class KijijiApi:
         resp = self.session.post(
             new_ad_url, data=data, headers=request_headers)
         resp.raise_for_status()
-        if "deleteWithoutSurvey" not in resp.text:
+        if "deleteSurveyReasons" not in resp.text:
             if "There was an issue posting your ad, please contact Customer Service." in resp.text:
                 raise KijijiApiException(
                     "Could not post ad; this user is banned.", resp.text)
