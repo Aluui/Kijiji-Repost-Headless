@@ -23,7 +23,8 @@ PostalLng: "-97.1023446"
 locationLevel0: 9006
 topAdDuration: "7"
 submitType: saveAndCheckout
-postAdForm.description: Looking to sell your house FAST?
+postAdForm.description: Contact us @ --> https://firsthomeoffer.ca <--
+  \n\nLooking to sell your house FAST?
   \nNot wanting to waste money on realtor fees?
   \nWe buy houses in Any Condition, Any Situation, Any Area.
   \nHouse might fall over? we will BUY IT.
@@ -32,5 +33,3 @@ categoryId: 35
 image_paths:
   - ./images/ipaycash.jpeg
   - ./images/ipaycash.jpg
-username: alumbs
-password: vsuk264b

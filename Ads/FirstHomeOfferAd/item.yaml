@@ -1,0 +1,38 @@
+postAdForm.attributeMap[numberbedrooms_s]: "9"
+postAdForm.attributeMap[numberbathrooms_s]: "10"
+postAdForm.addressProvince: Manitoba
+postAdForm.attributeMap[areainfeet_i]: "900"
+postAdForm.title: Get your First Offer - I buy houses
+postAdForm.addressStreetNumber: 404 Watt St
+postAdForm.addressStreetName: Watt
+postAdForm.addressCity: Winnipeg
+postAdForm.addressPostalCode: R2K 1P6
+postAdForm.priceAmount: 150000
+postAdForm.phoneNumber: 204-803-8641
+postAdForm.adType: OFFER
+postAdForm.attributeMap[forsalebyhousing_s]: ownr
+postAdForm.priceType: CONTACT
+postAdForm.city: Winnipeg
+postAdForm.province: Manitoba
+postAdForm.postalCode: R2K 1P6
+postAdForm.geocodeLat: "49.9183703"
+postAdForm.geocodeLng: "-97.1023446"
+postAdForm.locationId: 1700192
+PostalLat: "49.9183703"
+PostalLng: "-97.1023446"
+locationLevel0: 9006
+topAdDuration: "7"
+submitType: saveAndCheckout
+postAdForm.description: Get your First Offer on your home
+  \n\nContact us @ --> https://firsthomeoffer.ca <--
+  \n\nWhether you want to sell your house FAST or just get out of a double mortgage, WE CAN HELP!
+  \n\n Apply online at https://firsthomeoffer.ca or text/call us today at 204-803-8641
+  \n\n-No realtor fees?
+  \n-No need to clean up or fix the home
+  \n-We buy houses in Any Condition, Any Situation, Any Area.
+  \n\nContact us TODAY online at https://firsthomeoffer.ca or text/call at 204-803-8641
+categoryId: 35
+image_paths:
+  - ./images/firstofferlogoblue.jpg
+  - ./images/ipaycash.jpg
+  - ./images/ipaycash.jpeg
