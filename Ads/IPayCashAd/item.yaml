@@ -2,12 +2,12 @@ postAdForm.attributeMap[numberbedrooms_s]: "9"
 postAdForm.attributeMap[numberbathrooms_s]: "10"
 postAdForm.addressProvince: Manitoba
 postAdForm.attributeMap[areainfeet_i]: "700"
-postAdForm.title: I Pay Cash - Estate Sales
+postAdForm.title: I Pay Cash
 postAdForm.addressStreetNumber: 400 Watt St
 postAdForm.addressStreetName: Watt
 postAdForm.addressCity: Winnipeg
 postAdForm.addressPostalCode: R2K 1P7
-postAdForm.priceAmount: 150000
+postAdForm.priceAmount: 180000
 postAdForm.phoneNumber: 204-803-8641
 postAdForm.adType: OFFER
 postAdForm.attributeMap[forsalebyhousing_s]: ownr
@@ -23,8 +23,7 @@ PostalLng: "-97.1023446"
 locationLevel0: 9006
 topAdDuration: "7"
 submitType: saveAndCheckout
-postAdForm.description: Contact us @ --> https://firsthomeoffer.ca <--
-  \n\nLooking to sell your house FAST?
+postAdForm.description: \n\nLooking to sell your house FAST?
   \nNot wanting to waste money on realtor fees?
   \nWe buy houses in Any Condition, Any Situation, Any Area.
   \nHouse might fall over? we will BUY IT.

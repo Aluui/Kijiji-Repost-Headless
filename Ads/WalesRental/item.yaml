@@ -1,15 +1,15 @@
 postAdForm.attributeMap[numberbedrooms_s]: "2.5"
-postAdForm.attributeMap[numberbathrooms_s]: "10"
+postAdForm.attributeMap[numberbathrooms_s]: "20"
 postAdForm.attributeMap[numberparkingspots_s]: "2"
 postAdForm.addressProvince: Manitoba
-postAdForm.attributeMap[dateavailable_tdt]: "01/12/2020"
+postAdForm.attributeMap[dateavailable_tdt]: "01/03/2021"
 postAdForm.attributeMap[areainfeet_i]: "895"
-postAdForm.title: South End 2 beds + 2 Den, and 2 bathroom
+postAdForm.title: Gorgeous St Vital 2 Bedroom House + 2 Offices/Den
 postAdForm.addressStreetNumber: "474"
 postAdForm.addressStreetName: Wales
 postAdForm.addressCity: Winnipeg
 postAdForm.addressPostalCode: R2M 2T2
-postAdForm.priceAmount: "1375"
+postAdForm.priceAmount: "1350"
 postAdForm.phoneNumber: ""
 postAdForm.adType: OFFER
 postAdForm.attributeMap[forrentbyhousing_s]: ownr
@@ -43,12 +43,33 @@ locationLevel0: 9006
 topAdDuration: "7"
 submitType: saveAndCheckout
 postAdForm.description:
-  Located in the highly desirable location of St Vital. The
-  main floor suite features a large living room, spacious dining room, 2 main floor
-  bedrooms. The main floor has a full bathroom, brand new laminate
-  flooring throughout. The basement has two Den spaces, laundry and a
-  second full bathroom. Close to the bus route, one bus to the university
-  of Winnipeg!!
+  "Location: 474 Wales Ave \n
+
+Rental Price: First 6 Months $1350. After that $1400/month + utilities \n
+
+A modern 2 bedroom house located in Meadowood. The property has 2 bedrooms, 2 dens and 2 full bathrooms. Basement. New appliances. Laundry is available in the property. The property has a parking pad. Yard space is also available in front and back of the house. Walking distance to schools and Grocery stores. Tenants pay for all utilities. \n
+- 2 Bedrooms\n
+- 2 dens/office rooms in the basement\n
+- 2 Bathroom\n
+- Included appliances (Fridge, Stove, Washer, Dryer Included)\n
+- Approved pets are allowed with security deposit $1450\n
+- Available on a 1-year lease\n
+
+Tenant Application Requirements:
+
+* Must show proof of income
+
+* Must provide previous landlord and employers references
+
+* If first time renter, a guarantor is required in the application
+\n
+ For inquiries please contact either of the following:
+
+* Mobile: (431) 631-2150 (Leave a voicemail or text message)
+
+* Email: leasing@jxpm.ca
+
+\nProfessionally managed by JX Property Management Corporation"
 categoryId: 37
 image_paths:
   - ./images/1.jpg
